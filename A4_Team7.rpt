@@ -1,0 +1,127 @@
+﻿W23 PROG8080 Section 3
+Assignment 4
+ 
+Rutvik Gandhi
+Ricky Satyam
+Pubudu Gunasekara
+Aditya Mandani
+Dhruvil
+ 
+Apr  9 2023  1:39PM
+ 
+*** Question 1 ***
+ 
+>>> CHECKING IF SWC_TEAM07 EXISTS
+>>> SWC_TEAM07 EXISTS
+>>> ROLLING BACK PENDING SWC_TEAM07 TRANSACTIONS
+>>> DROPING SWC_TEAM07
+>>> CREATING A NEW SWC_TEAM07 DATABASE
+*** Question 2, 3, 4, 5, 6, 7 ***
+ 
+>>> CREATING Supplier TABLE
+>>> CREATING Part TABLE
+>>> CREATING Bundle TABLE
+>>> CREATING BundlePartLinkingTable TABLE
+>>> CREATING Address TABLE
+>>> CREATING Purchaser TABLE
+>>> CREATING OrderHistory TABLE
+*** Question 6 ***
+ 
+>>> List all the table names and their constraint names (PK, FK, CK) created.
+Table Name           Constraint Name
+-------------------- --------------------------------------------------
+Supplier             PK_Supplier
+Part                 PK_Part
+Part                 FK_Part_SupplierId
+Part                 CK_Part_UnitPrice
+Bundle               PK_Bundle
+Bundle               CK_Bundle_Name
+BundlePartLinkingTab FK_BundlePartLinkingTable_BundleId
+BundlePartLinkingTab FK_BundlePartLinkingTable_PartId
+AddressTable         PK_Address
+AddressTable         CK_Address_StreetName
+Purchaser            PK_Purchaser
+Purchaser            FK_Purchaser_AddressId
+Purchaser            CK_Purchaser_FirstName
+OrderHistory         PK_Order
+OrderHistory         FK_Order_PartId
+OrderHistory         FK_Order_PurchaserId
+OrderHistory         CK_Order_Quantity
+
+(17 rows affected)
+
+*** Question 7 ***
+ 
+>>> List the default constraint name and its definition.
+Default Name         definition
+-------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DF_Address_Country   ('Canada')
+
+(1 row affected)
+
+*** Question 8 ***
+ 
+>>> Insert all available data into the tables.
+
+(5 rows affected)
+
+(14 rows affected)
+
+(4 rows affected)
+
+(17 rows affected)
+
+(4 rows affected)
+
+(4 rows affected)
+
+(15 rows affected)
+*** Question 9 ***
+ 
+>>> Create a table index for the purchaser’s phone.
+>>> Create a unique index for the purchaser’s email.
+*** Question 10 ***
+ 
+>>> Display all the purchase details with “Extended Amount”.
+Part Number                    Supplier                       Part Type                      Part Description                                             Purchaser                                                    Purchase Date Unit Price            Qty                  Extended Amount
+------------------------------ ------------------------------ ------------------------------ ------------------------------------------------------------ ------------------------------------------------------------ ------------- --------------------- -------------------- ---------------------
+DL1010                         Dell                           Desktop                        Dell Optiplex 1010                                           Joey                                                         2022-10-31    40.00                 25                   1000.00
+DL5040                         Dell                           Desktop                        Dell Optiplex 5040                                           Joey                                                         2022-10-31    150.00                50                   7500.00
+DLM190                         Dell                           Monitor                        Dell 19-inch Monitor                                         Joey                                                         2022-10-31    35.00                 25                   875.00
+HPM220                         HP                             Monitor                        HP 22-inch Monitor                                           Joey                                                         2022-12-10    45.00                 30                   1350.00
+HP400                          HP                             Desktop                        HP Desktop Tower                                             May                                                          2022-11-10    60.00                 15                   900.00
+HP800                          HP                             Desktop                        HP EliteDesk 800G1                                           May                                                          2022-11-20    200.00                20                   4000.00
+HPM270                         HP                             Monitor                        HP 27-inch Monitor                                           May                                                          2022-11-20    120.00                20                   2400.00
+SM330                          Samsung                        Tablet                         Samsung Galaxy Tab 7” Android Tablet                         Troy                                                         2022-11-30    110.00                10                   1100.00
+HP501                          HP                             Keyboard                       HP 101-Key Computer Keyboard                                 Troy                                                         2022-12-20    9.00                  100                  900.00
+HP502                          HP                             Mouse                          HP Mouse                                                     Troy                                                         2022-12-20    6.00                  100                  600.00
+DLM240                         Dell                           Monitor                        Dell 24-inch Monitor                                         Vinh                                                         2022-12-05    80.00                 80                   6400.00
+LEN101                         Lenovo                         Keyboard                       Lenovo 101-Key Computer Keyboard                             Vinh                                                         2022-12-05    7.00                  50                   350.00
+LEN102                         Lenovo                         Mouse                          Lenovo Mouse                                                 Vinh                                                         2022-12-05    5.00                  50                   250.00
+LEN102                         Lenovo                         Mouse                          Lenovo Mouse                                                 Vinh                                                         2022-12-15    5.00                  100                  500.00
+MAX901                         Max                            Camera                         Max Web Camera                                               Vinh                                                         2022-12-15    20.00                 40                   800.00
+
+(15 rows affected)
+
+*** Question 11 ***
+ 
+>>> Display the desktop bundles along with their total costs.
+Bundle                         Total Cost
+------------------------------ ---------------------
+Dell Biz                       242.00
+Dell Eco                       87.00
+HP Biz                         355.00
+HP Eco                         120.00
+
+(4 rows affected)
+
+>>> List all the view names created.
+View Name
+--------------------------------------------------------------------------------------------------------------------------------
+VW_PurchaseDetailPlusExtendedAmount
+VW_BundleCost
+
+(2 rows affected)
+
+
+Completion time: 2023-04-09T13:39:25.3930934-04:00
